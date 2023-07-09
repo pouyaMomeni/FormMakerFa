@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@font-face {
+    font-family: real;
+    src: url('../font/Vazir-Medium.ttf');
+}
+body{
+    background-color: #ffffff;
+    font-family: real;
+}
