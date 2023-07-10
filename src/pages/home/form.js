@@ -2,13 +2,10 @@ import React,{useRef} from 'react'
 import { useDrag,useDrop } from 'react-dnd'
 import { ItemTypes } from './itemType'
 import { ButtonForm } from 'src/components/button'
-import { TextInpute } from 'src/components/inpute'
+import { EmailInpute, NumberInpute, TextArea, TextInpute } from 'src/components/inpute'
+import { SelectForm } from 'src/components/select'
 
-const style = {
-    padding: '0.5rem 1rem',
-    marginBottom: '.5rem',
-    cursor: 'move',
-  }
+
 const Form = ({ id, text, index, moveCard,name }) => {
 
     const ref = useRef(null)
@@ -69,10 +66,10 @@ const Form = ({ id, text, index, moveCard,name }) => {
 
 
     return (
-        <div ref={ref} style={{ ...style, opacity }} data-handler-id={handlerId} >
+        <div ref={ref} className='p-1' style={{  opacity }} data-handler-id={handlerId} >
 
           {name === 'text' ? 
-          <div className='flex justify-center my-2 gap-1'>
+          <div className='flex justify-center my-1 gap-1'>
             <TextInpute placeholder={text} />
           </div>
           :
@@ -80,8 +77,39 @@ const Form = ({ id, text, index, moveCard,name }) => {
           }
 
           {name === 'button' ? 
-          <div className='flex justify-center my-2'>
+          <div className='flex justify-center my-1'>
             <ButtonForm text={text}/>
+          </div>
+          :
+          ''
+          }
+
+          {name === 'select' ? 
+          <div className='flex justify-center my-1'>
+              <SelectForm/>
+          </div>
+          :
+          ''
+          }
+          
+          {name === 'number' ? 
+          <div className='flex justify-center my-1'>
+              <NumberInpute placeholder={text} />
+          </div>
+          :
+          ''
+          }
+
+          {name === 'textArea' ? 
+          <div className='flex justify-center my-1'>
+              <TextArea placeholder={text} />
+          </div>
+          :
+          ''
+          }
+          {name === 'email' ? 
+          <div className='flex justify-center my-1'>
+              <EmailInpute placeholder={text} />
           </div>
           :
           ''

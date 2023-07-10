@@ -7,11 +7,11 @@ const NavBar = () => {
             <img src={Logo} width={45} alt="" />
             <p className='text-secend text-lg'>فرم ساز</p>
         </div>
-        <div className='flex items-center gap-4'>
+        {/* <div className='flex items-center gap-4'>
             <p className='text-secend text-md cursor-pointer p-[1px] hover:border-b-[3px] border-forth'>خانه</p>
             <p className='text-secend text-md cursor-pointer p-[1px] hover:border-b-[3px] border-forth'>درباره ما</p>
         </div>
-        <div></div>
+        <div></div> */}
     </div>
   )
 }
